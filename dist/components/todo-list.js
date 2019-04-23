@@ -4,9 +4,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-import { html, css, customElement, property } from '../node_modules/lit-element/lit-element.js';
-import { repeat } from '../node_modules/lit-html/directives/repeat.js';
-import { DabElement } from './dab-element.js';
+import { html, css, property } from '../../node_modules/lit-element/lit-element.js';
+import { repeat } from '../../node_modules/lit-html/directives/repeat.js';
+import { DabElement, element } from '../dab-element.js';
 import './add-todo.js';
 import './todo-item.js';
 let TodoList = class TodoList extends DabElement {
@@ -70,6 +70,6 @@ __decorate([
     property({ type: Boolean })
 ], TodoList.prototype, "archive", void 0);
 TodoList = __decorate([
-    customElement('todo-list')
+    element('todo-list')
 ], TodoList);
 export { TodoList };

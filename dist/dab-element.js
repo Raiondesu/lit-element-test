@@ -16,3 +16,10 @@ export class DabElement extends LitElement {
         this.requestUpdate();
     }
 }
+export const element = (tagName, extendsTag) => {
+    const decorator = (classOrDescriptor) => {
+        window.customElements.define(tagName, classOrDescriptor, extendsTag ? { extends: extendsTag } : undefined);
+    };
+    decorator.extends = (el) => (typeof el === 'string' ? element(tagName, el) : element(tagName));
+    return decorator;
+};

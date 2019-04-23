@@ -1,8 +1,10 @@
 // @ts-ignore
 import { Router } from 'https://unpkg.com/@vaadin/router';
-import './home-page.js';
-import './todo-manager.js';
-const router = new Router(document.getElementById('outlet'));
+import './components/app-nav.js';
+import './components/router-view.js';
+import './pages/home-page.js';
+import './pages/todo-manager.js';
+const router = new Router(document.querySelector('router-view'));
 router.setRoutes([
     {
         path: '/',

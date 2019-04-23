@@ -1,13 +1,17 @@
-import { html, css, property, customElement } from '../node_modules/lit-element/lit-element.js';
-import { DabElement } from './dab-element.js';
+import { html, css, property } from '../../node_modules/lit-element/lit-element.js';
+import { DabElement, element } from '../dab-element.js';
 
-@customElement('todo-item')
+@element('todo-item')
 export class TodoItem extends DabElement {
   static get styles() {
     return css`
       :host {
         width: 100%;
         display: flex;
+      }
+
+      :host([archived]) {
+        color: grey;
       }
 
       :host .actions {
@@ -73,6 +77,7 @@ export class TodoItem extends DabElement {
   render = () => html`
     <label class="todo">
       <input type="checkbox"
+        ?disabled=${this.archived}
         ?checked=${this.todo.done}
         @change=${this.updateDone}
       />

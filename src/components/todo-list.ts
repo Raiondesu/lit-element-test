@@ -1,11 +1,11 @@
-import { html, css, customElement, property } from '../node_modules/lit-element/lit-element.js';
-import { repeat } from '../node_modules/lit-html/directives/repeat.js';
-import { DabElement } from './dab-element.js';
+import { html, css, property } from '../../node_modules/lit-element/lit-element.js';
+import { repeat } from '../../node_modules/lit-html/directives/repeat.js';
+import { DabElement, element } from '../dab-element.js';
 
 import './add-todo.js';
 import './todo-item.js';
 
-@customElement('todo-list')
+@element('todo-list')
 export class TodoList extends DabElement {
   static get styles() {
     return css`

@@ -1,4 +1,4 @@
-import { LitElement } from '../node_modules/lit-element/lit-element.js';
+import { LitElement, Constructor } from '../node_modules/lit-element/lit-element.js';
 
 export class DabElement extends LitElement {
   emit(name: string, detail?: any) {
@@ -20,4 +20,16 @@ export class DabElement extends LitElement {
     delete target[prop];
     this.requestUpdate();
   }
+}
+
+export const element = (tagName: string, extendsTag?: string) => {
+  const decorator = (classOrDescriptor: Constructor<HTMLElement>) => {
+    window.customElements.define(tagName, classOrDescriptor, extendsTag ? { extends: extendsTag } : undefined);
+  };
+
+  decorator.extends = <T extends typeof HTMLElement | string = string>(el: T) => (
+    typeof el === 'string' ? element(tagName, el) : element(tagName)
+  );
+
+  return decorator;
 }

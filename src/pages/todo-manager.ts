@@ -1,10 +1,10 @@
-import { html, customElement, property, css } from '../node_modules/lit-element/lit-element.js';
-import { DabElement } from './dab-element.js';
+import { html, css } from '../../node_modules/lit-element/lit-element.js';
+import { DabElement, element } from '../dab-element.js';
 
-import './todo-list.js';
-import todos from './todos.js';
+import '../components/todo-list.js';
+import todos from '../todos.js';
 
-@customElement('todo-manager')
+@element('todo-manager')
 export class TodoManager extends DabElement {
   static get styles() {
     return css`
