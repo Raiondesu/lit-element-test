@@ -1,8 +1,8 @@
 import { html, css } from '../../node_modules/lit-element/lit-element.js';
 import { DabElement, element } from '../dab-element.js';
-
-import '../components/todo-list.js';
 import todos from '../todos.js';
+
+import('../components/todo-list.js');
 
 @element('todo-manager')
 export class TodoManager extends DabElement {

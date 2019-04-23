@@ -6,8 +6,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 import { html, css } from '../../node_modules/lit-element/lit-element.js';
 import { DabElement, element } from '../dab-element.js';
-import '../components/todo-list.js';
 import todos from '../todos.js';
+import('../components/todo-list.js');
 let TodoManager = class TodoManager extends DabElement {
     constructor() {
         super(...arguments);

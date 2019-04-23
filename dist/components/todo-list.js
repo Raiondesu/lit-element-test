@@ -7,8 +7,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 import { html, css, property } from '../../node_modules/lit-element/lit-element.js';
 import { repeat } from '../../node_modules/lit-html/directives/repeat.js';
 import { DabElement, element } from '../dab-element.js';
-import './add-todo.js';
-import './todo-item.js';
+import('./add-todo.js');
+import('./todo-item.js');
 let TodoList = class TodoList extends DabElement {
     constructor() {
         super(...arguments);
@@ -72,4 +72,3 @@ __decorate([
 TodoList = __decorate([
     element('todo-list')
 ], TodoList);
-export { TodoList };

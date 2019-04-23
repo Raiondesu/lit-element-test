@@ -2,11 +2,11 @@ import { html, css, property } from '../../node_modules/lit-element/lit-element.
 import { repeat } from '../../node_modules/lit-html/directives/repeat.js';
 import { DabElement, element } from '../dab-element.js';
 
-import './add-todo.js';
-import './todo-item.js';
+import('./add-todo.js');
+import('./todo-item.js');
 
 @element('todo-list')
-export class TodoList extends DabElement {
+class TodoList extends DabElement {
   static get styles() {
     return css`
       :host {
