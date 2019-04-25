@@ -4,10 +4,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-import { html, css, customElement } from '../../node_modules/lit-element/lit-element.js';
-import { DabElement, event } from '../dab-element.js';
-import todos from '../todos.js';
-import '../components/todo-list/index.js';
+import { html, css, customElement } from '../../../node_modules/lit-element/lit-element.js';
+import { DabElement, event } from '../../dab-element.js';
+import todos from '../../todos.js';
+import '../../components/todo-list/index.js';
 let TodoManager = class TodoManager extends DabElement {
     constructor() {
         super(...arguments);

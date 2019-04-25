@@ -1,7 +1,7 @@
-import { html } from '../../node_modules/lit-element/lit-element.js';
-import { DabElement, element } from '../dab-element.js';
+import { html, customElement } from '../../node_modules/lit-element/lit-element.js';
+import { DabElement } from '../dab-element.js';
 
-@element('app-nav')
+@customElement('app-nav')
 export class AppNav extends DabElement {
   render = () => html`
     <a href="/">Home</a>

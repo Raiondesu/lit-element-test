@@ -1,7 +1,11 @@
-import { html, css, property } from '../../node_modules/lit-element/lit-element.js';
-import { DabElement, element } from '../dab-element.js';
+import { html, css, property, customElement } from '../../node_modules/lit-element/lit-element.js';
+import { DabElement } from '../dab-element.js';
 
-@element('add-todo')
+/**
+ * Add todos easily
+ * @event {Todo} add - event of adding the todo
+ */
+@customElement('add-todo')
 export class AddTodo extends DabElement {
   static get styles() {
     return css`

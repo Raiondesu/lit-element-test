@@ -1,8 +1,12 @@
-import { LitElement, Constructor } from '../node_modules/lit-element/lit-element.js';
+//@ts-ignore
+import 'https://unpkg.com/autobind@1.0.3/autobind.js';
+declare function autobind(target): any;
+import { LitElement, TemplateResult, CSSResult } from '../node_modules/lit-element/lit-element.js';
+
 
 export class DabElement extends LitElement {
-  emit(name: string, detail?: any) {
-    this.dispatchEvent(new CustomEvent(name, { detail }));
+  emit(name: string, ...details: any) {
+    this.dispatchEvent(new CustomEvent(name, { detail: details }));
   }
 
   set(target: any, prop: PropertyKey, value: any) {
@@ -22,14 +26,29 @@ export class DabElement extends LitElement {
   }
 }
 
-export const element = (tagName: string, extendsTag?: string) => {
-  const decorator = (classOrDescriptor: Constructor<HTMLElement>) => {
-    window.customElements.define(tagName, classOrDescriptor, extendsTag ? { extends: extendsTag } : undefined);
-  };
+export const render = (view: () => TemplateResult) => (target) => {
+  target.prototype.render = view;
 
-  decorator.extends = <T extends typeof HTMLElement | string = string>(el: T) => (
-    typeof el === 'string' ? element(tagName, el) : element(tagName)
-  );
-
-  return decorator;
+  return autobind(target);
 }
+
+export const style = (style: CSSResult | (() => CSSResult)) => (target) => {
+  const defineStyle = (getStyle: () => CSSResult) => Object.defineProperty(target, 'styles', {
+    get: getStyle
+  });
+
+  if (typeof style === 'function') {
+    defineStyle(style);
+  } else {
+    defineStyle(() => style);
+  }
+
+  return target;
+}
+
+export const event = <
+  T extends (...args: any[]) => any,
+  D = T extends (...args: infer U) => any ? U : any
+>(handler: T) => (
+  (e: CustomEvent<D>): ReturnType<T> => Array.isArray(e.detail) ? handler(...e.detail) : handler(e.detail)
+);

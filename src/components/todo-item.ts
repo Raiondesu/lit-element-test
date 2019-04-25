@@ -1,7 +1,7 @@
-import { html, css, property } from '../../node_modules/lit-element/lit-element.js';
-import { DabElement, element } from '../dab-element.js';
+import { html, css, property, customElement } from '../../node_modules/lit-element/lit-element.js';
+import { DabElement } from '../dab-element.js';
 
-@element('todo-item')
+@customElement('todo-item')
 export class TodoItem extends DabElement {
   static get styles() {
     return css`
@@ -59,21 +59,6 @@ export class TodoItem extends DabElement {
     this.emit('delete', this.todo);
   }
 
-  actions = () => html`
-    <div class="actions">
-      ${this.archived ? html`
-        <button @click=${this.restoreTodo}>+</button>
-        <button @click=${this.deleteTodo}>DELETE</button>
-      ` : html`
-        <button @click=${this.archiveTodo}>
-          X
-          ${/* this.todo.archived !== undefined ? '(was archived previously)' :  */''}
-        </button>
-      `}
-    </div>
-  `;
-
-
   render = () => html`
     <label class="todo">
       <input type="checkbox"
@@ -88,6 +73,16 @@ export class TodoItem extends DabElement {
       `}
     </label>
 
-    ${this.actions()}
+    <div class="actions">
+      ${this.archived ? html`
+        <button @click=${this.restoreTodo}>+</button>
+        <button @click=${this.deleteTodo}>DELETE</button>
+      ` : html`
+        <button @click=${this.archiveTodo}>
+          X
+          ${/* this.todo.archived !== undefined ? '(was archived previously)' :  */''}
+        </button>
+      `}
+    </div>
   `;
 }
