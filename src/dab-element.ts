@@ -1,6 +1,7 @@
 //@ts-ignore
 import 'https://unpkg.com/autobind@1.0.3/autobind.js';
-declare function autobind(target): any;
+declare function autobind<T>(target: T): T;
+
 import { LitElement, TemplateResult, CSSResult } from '../node_modules/lit-element/lit-element.js';
 
 
@@ -53,6 +54,6 @@ export const event = <
   (e: CustomEvent<D>): ReturnType<T> => Array.isArray(e.detail) ? handler(...e.detail) : handler(e.detail)
 );
 
-window.render = global.render = render;
-window.style = global.style = style;
-window.e = global.event = event;
+window.render = render;
+window.style = style;
+window.e = event;

@@ -35,6 +35,6 @@ export const style = (style) => (target) => {
     return target;
 };
 export const event = (handler) => ((e) => Array.isArray(e.detail) ? handler(...e.detail) : handler(e.detail));
-window.render = global.render = render;
-window.style = global.style = style;
-window.e = global.event = event;
+window.render = render;
+window.style = style;
+window.e = event;
