@@ -53,4 +53,4 @@ TodoList = __decorate([
     render(view),
     style(css)
 ], TodoList);
-export { TodoList };
+export default TodoList;

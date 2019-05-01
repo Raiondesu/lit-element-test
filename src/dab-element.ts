@@ -14,7 +14,7 @@ export class DabElement extends LitElement {
     this.requestUpdate();
   }
 
-  next(cb: Function) {
+  next(cb: (_?: never) => void) {
     cb();
 
     this.requestUpdate();
@@ -52,3 +52,7 @@ export const event = <
 >(handler: T) => (
   (e: CustomEvent<D>): ReturnType<T> => Array.isArray(e.detail) ? handler(...e.detail) : handler(e.detail)
 );
+
+window.render = global.render = render;
+window.style = global.style = style;
+window.e = global.event = event;

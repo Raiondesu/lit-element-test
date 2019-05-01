@@ -29,9 +29,10 @@ let TodoManager = class TodoManager extends DabElement {
         });
     }
     archiveTodo(todo) {
-        this.next(_ => {
-            todo.archived = true;
-        });
+        this.updateTodo();
+        // this.next(_ => {
+        //   todo.archived = true;
+        // });
     }
     deleteTodo(todo) {
         const idx = this.todos.indexOf(todo);
@@ -53,4 +54,4 @@ TodoManager = __decorate([
     render(view),
     style(css)
 ], TodoManager);
-export { TodoManager };
+export default TodoManager;

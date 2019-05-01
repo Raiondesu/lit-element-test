@@ -1,8 +1,8 @@
 import { html } from '../../../node_modules/lit-html/lit-html.js';
 import { repeat } from '../../../node_modules/lit-html/directives/repeat.js';
 import { event } from '../../dab-element.js';
-import '../todo-item.js';
-import './../add-todo.js';
+import '../todo-item/index.js';
+import '../add-todo/index.js';
 export default function () {
     return html `
     <h2>${this.archive ? 'Archived' : 'Your'} todos</h2>

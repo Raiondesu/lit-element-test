@@ -1,5 +1,5 @@
-import { property, customElement } from '../../../node_modules/lit-element/lit-element.js';
-import { DabElement, render, style } from '../../dab-element.js';
+import { property, customElement } from '../../../../../node_modules/lit-element/lit-element.js';
+import { DabElement, render, style } from '../../../../dab-element.js';
 
 import view from './view.js';
 import css from './styles.js';
@@ -14,7 +14,7 @@ import css from './styles.js';
 @customElement('todo-list')
 @render(view)
 @style(css)
-export class TodoList extends DabElement {
+export default class TodoList extends DabElement {
   @property({ type: Array })
   public todos: Todo[] = [];
 
