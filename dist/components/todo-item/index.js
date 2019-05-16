@@ -39,7 +39,7 @@ __decorate([
 ], TodoItem.prototype, "archived", void 0);
 TodoItem = __decorate([
     customElement('todo-item'),
-    render(view),
-    style(styles)
+    style(styles),
+    render(view)
 ], TodoItem);
 export default TodoItem;

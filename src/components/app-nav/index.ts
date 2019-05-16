@@ -1,5 +1,5 @@
-import { html, customElement, css } from '../../node_modules/lit-element/lit-element.js';
-import { DabElement, style } from '../dab-element.js';
+import { html, customElement, css } from '../../../node_modules/lit-element/lit-element.js';
+import { DabElement, style } from '../../dab-element.js';
 
 @customElement('app-nav')
 @style(css`

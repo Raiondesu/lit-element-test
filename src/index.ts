@@ -1,8 +1,8 @@
 // @ts-ignore
 import { Router } from 'https://unpkg.com/@vaadin/router';
-import './components/router-view.js';
+import './components/router-view/index.js';
 
-import './components/app-nav.js';
+import './components/app-nav/index.js';
 import './pages/home-page.js';
 import './pages/todo-manager/index.js';
 import { customElement, html, css } from '../node_modules/lit-element/lit-element.js';

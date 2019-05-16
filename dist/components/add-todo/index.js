@@ -53,7 +53,7 @@ __decorate([
 ], AddTodo.prototype, "text", void 0);
 AddTodo = __decorate([
     customElement('add-todo'),
-    render(view),
-    style(styles)
+    style(styles),
+    render(view)
 ], AddTodo);
 export default AddTodo;
