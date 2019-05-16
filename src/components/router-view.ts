@@ -1,9 +1,7 @@
 import { html, customElement } from '../../node_modules/lit-element/lit-element.js';
-import { DabElement } from '../dab-element.js';
+import { DabElement, unshadow, render } from '../dab-element.js';
 
 @customElement('router-view')
-export class RouterView extends DabElement {
-  render = () => html`<template></template>`;
-
-  createRenderRoot() { return this; }
-}
+@render(() => html`<template></template>`)
+@unshadow
+export class RouterView extends DabElement {}

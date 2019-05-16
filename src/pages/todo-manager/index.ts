@@ -5,8 +5,8 @@ import view from './view.js';
 import css from './styles.js';
 
 @customElement('todo-manager')
-@render(view)
 @style(css)
+@render(view)
 export default class TodoManager extends DabElement {
   public todos: Todo[] = todos;
 

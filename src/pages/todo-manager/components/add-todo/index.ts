@@ -8,8 +8,8 @@ import styles from './styles.js';
  * @event {Todo} add - event of adding the todo
  */
 @customElement('add-todo')
-@render(view)
 @style(styles)
+@render(view)
 export default class AddTodo extends DabElement {
   @property({ type: String, attribute: false })
   public text: string = '';

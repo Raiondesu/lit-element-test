@@ -4,8 +4,8 @@ import view from './view.js';
 import styles from './styles.js';
 
 @customElement('todo-item')
-@render(view)
 @style(styles)
+@render(view)
 export default class TodoItem extends DabElement {
   @property({ type: Object })
   public todo!: Todo;

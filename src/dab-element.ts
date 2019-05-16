@@ -2,7 +2,7 @@
 import 'https://unpkg.com/autobind@1.0.3/autobind.js';
 declare function autobind<T>(target: T): T;
 
-import { LitElement, TemplateResult, CSSResult } from '../node_modules/lit-element/lit-element.js';
+import { LitElement, TemplateResult, CSSResult, html } from '../node_modules/lit-element/lit-element.js';
 
 
 export class DabElement extends LitElement {
@@ -27,6 +27,10 @@ export class DabElement extends LitElement {
   }
 }
 
+export const unshadow = target => {
+  target.prototype.createRenderRoot = function () { return this; };
+};
+
 export const render = (view: () => TemplateResult) => (target) => {
   target.prototype.render = view;
 
@@ -34,14 +38,40 @@ export const render = (view: () => TemplateResult) => (target) => {
 }
 
 export const style = (style: CSSResult | (() => CSSResult)) => (target) => {
-  const defineStyle = (getStyle: () => CSSResult) => Object.defineProperty(target, 'styles', {
+
+
+  const defineStaticStyle = (getStyle: () => CSSResult) => Object.defineProperty(target, 'styles', {
     get: getStyle
   });
 
-  if (typeof style === 'function') {
-    defineStyle(style);
+  const defineInstanceStyle = (getStyle: () => CSSResult) => {
+    console.log('style', target.prototype.render);
+    const renderPlain = target.prototype.render;
+
+    target.prototype.render = function render() {
+      const css = getStyle().cssText;
+
+      return html`
+        <style>
+          ${css}
+        </style>
+        ${renderPlain.apply(this)}
+      `;
+    }
+  }
+
+  console.log(String(target.prototype.createRenderRoot), String(function (this: any) { return this; }));
+  console.log(String(target.prototype.createRenderRoot) !== String(function (this: any) { return this; }));
+
+
+  const isShadow = String(target.prototype.createRenderRoot) !== String(function (this: any) { return this; });
+
+  const styleFunction = typeof style === 'function' ? style : () => style;
+
+  if (isShadow) {
+    defineStaticStyle(styleFunction);
   } else {
-    defineStyle(() => style);
+    defineInstanceStyle(styleFunction);
   }
 
   return target;

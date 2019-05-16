@@ -51,7 +51,7 @@ let TodoManager = class TodoManager extends DabElement {
 };
 TodoManager = __decorate([
     customElement('todo-manager'),
-    render(view),
-    style(css)
+    style(css),
+    render(view)
 ], TodoManager);
 export default TodoManager;

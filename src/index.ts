@@ -5,16 +5,36 @@ import './components/router-view.js';
 import './components/app-nav.js';
 import './pages/home-page.js';
 import './pages/todo-manager/index.js';
+import { customElement, html, css } from '../node_modules/lit-element/lit-element.js';
+import { DabElement, style, unshadow } from './dab-element.js';
 
-const router = new Router(document.querySelector('router-view'));
+@customElement('app-root')
+@style(css`
+  app-root {
+      display: flex;
+      height: 100vh;
+      width: 100%;
+    }
+`)
+@unshadow
+class App extends DabElement {
+  render = () => html`
+    <app-nav></app-nav>
+    <router-view></router-view>
+  `;
 
-router.setRoutes([
-  {
-    path: '/',
-    component: 'home-page'
-  },
-  {
-    path: '/todo',
-    component: 'todo-manager'
+  firstUpdated() {
+    const router = new Router(this.querySelector('router-view'));
+
+    router.setRoutes([
+      {
+        path: '/',
+        component: 'home-page'
+      },
+      {
+        path: '/todo',
+        component: 'todo-manager'
+      }
+    ]);
   }
-]);
+}

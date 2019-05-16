@@ -5,15 +5,12 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 import { html, customElement } from '../../node_modules/lit-element/lit-element.js';
-import { DabElement } from '../dab-element.js';
+import { DabElement, unshadow, render } from '../dab-element.js';
 let RouterView = class RouterView extends DabElement {
-    constructor() {
-        super(...arguments);
-        this.render = () => html `<template></template>`;
-    }
-    createRenderRoot() { return this; }
 };
 RouterView = __decorate([
-    customElement('router-view')
+    customElement('router-view'),
+    render(() => html `<template></template>`),
+    unshadow
 ], RouterView);
 export { RouterView };

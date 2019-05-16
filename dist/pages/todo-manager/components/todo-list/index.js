@@ -50,7 +50,7 @@ __decorate([
 ], TodoList.prototype, "archive", void 0);
 TodoList = __decorate([
     customElement('todo-list'),
-    render(view),
-    style(css)
+    style(css),
+    render(view)
 ], TodoList);
 export default TodoList;

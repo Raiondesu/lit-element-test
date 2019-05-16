@@ -12,8 +12,8 @@ import css from './styles.js';
  * @event archive - event of archiving the todo
  */
 @customElement('todo-list')
-@render(view)
 @style(css)
+@render(view)
 export default class TodoList extends DabElement {
   @property({ type: Array })
   public todos: Todo[] = [];
