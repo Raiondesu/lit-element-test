@@ -62,34 +62,6 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "raiondesu.lit-element-test-todo/add-todo@1.0.7": {
-        "files": [
-            {
-                "relativePath": "src/components/add-todo/README.md",
-                "test": false,
-                "name": "README.md"
-            },
-            {
-                "relativePath": "src/components/add-todo/index.ts",
-                "test": false,
-                "name": "index.ts"
-            },
-            {
-                "relativePath": "src/components/add-todo/styles.ts",
-                "test": false,
-                "name": "styles.ts"
-            },
-            {
-                "relativePath": "src/components/add-todo/view.ts",
-                "test": false,
-                "name": "view.ts"
-            }
-        ],
-        "mainFile": "src/components/add-todo/index.ts",
-        "trackDir": "src/components/add-todo",
-        "origin": "AUTHORED",
-        "exported": true
-    },
     "raiondesu.lit-element-test-todo/todo-list@1.0.7": {
         "files": [
             {
@@ -111,6 +83,36 @@
         "mainFile": "src/components/todo-list/index.ts",
         "trackDir": "src/components/todo-list",
         "origin": "AUTHORED",
+        "exported": true
+    },
+    "raiondesu.lit-element-test-todo/add-todo@1.0.7": {
+        "files": [
+            {
+                "name": "README.md",
+                "relativePath": "src/components/add-todo/README.md",
+                "test": false
+            },
+            {
+                "name": "index.ts",
+                "relativePath": "src/components/add-todo/index.ts",
+                "test": false
+            },
+            {
+                "name": "styles.ts",
+                "relativePath": "src/components/add-todo/styles.ts",
+                "test": false
+            },
+            {
+                "name": "view.ts",
+                "relativePath": "src/components/add-todo/view.ts",
+                "test": false
+            }
+        ],
+        "mainFile": "src/components/add-todo/index.ts",
+        "origin": "AUTHORED",
+        "dependencies": [
+            "raiondesu.lit-element-test-todo/dab-element@1.0.0"
+        ],
         "exported": true
     },
     "version": "14.1.0"
