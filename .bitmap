@@ -27,29 +27,6 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "raiondesu.lit-element-test-todo/add-todo@1.0.0": {
-        "files": [
-            {
-                "relativePath": "src/components/add-todo/index.ts",
-                "test": false,
-                "name": "index.ts"
-            },
-            {
-                "relativePath": "src/components/add-todo/styles.ts",
-                "test": false,
-                "name": "styles.ts"
-            },
-            {
-                "relativePath": "src/components/add-todo/view.ts",
-                "test": false,
-                "name": "view.ts"
-            }
-        ],
-        "mainFile": "src/components/add-todo/index.ts",
-        "trackDir": "src/components/add-todo",
-        "origin": "AUTHORED",
-        "exported": true
-    },
     "raiondesu.lit-element-test-todo/todo-item@1.0.0": {
         "files": [
             {
@@ -73,7 +50,42 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "raiondesu.lit-element-test-todo/todo-list@1.0.0": {
+    "raiondesu.lit-element-test-todo/dab-element@1.0.0": {
+        "files": [
+            {
+                "relativePath": "src/dab-element.ts",
+                "test": false,
+                "name": "dab-element.ts"
+            }
+        ],
+        "mainFile": "src/dab-element.ts",
+        "origin": "AUTHORED",
+        "exported": true
+    },
+    "raiondesu.lit-element-test-todo/add-todo@1.0.1": {
+        "files": [
+            {
+                "relativePath": "src/components/add-todo/index.ts",
+                "test": false,
+                "name": "index.ts"
+            },
+            {
+                "relativePath": "src/components/add-todo/styles.ts",
+                "test": false,
+                "name": "styles.ts"
+            },
+            {
+                "relativePath": "src/components/add-todo/view.ts",
+                "test": false,
+                "name": "view.ts"
+            }
+        ],
+        "mainFile": "src/components/add-todo/index.ts",
+        "trackDir": "src/components/add-todo",
+        "origin": "AUTHORED",
+        "exported": true
+    },
+    "raiondesu.lit-element-test-todo/todo-list@1.0.1": {
         "files": [
             {
                 "relativePath": "src/components/todo-list/index.ts",
@@ -93,18 +105,6 @@
         ],
         "mainFile": "src/components/todo-list/index.ts",
         "trackDir": "src/components/todo-list",
-        "origin": "AUTHORED",
-        "exported": true
-    },
-    "raiondesu.lit-element-test-todo/dab-element@1.0.0": {
-        "files": [
-            {
-                "relativePath": "src/dab-element.ts",
-                "test": false,
-                "name": "dab-element.ts"
-            }
-        ],
-        "mainFile": "src/dab-element.ts",
         "origin": "AUTHORED",
         "exported": true
     },

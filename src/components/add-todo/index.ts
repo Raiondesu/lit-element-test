@@ -6,6 +6,19 @@ import styles from './styles.js';
 /**
  * Add todos easily
  * @event {Todo} add - event of adding the todo
+ *
+ * @example
+ *
+ * import { customElement, html } from 'lit-element';
+ *
+ * @customElement('todo-page')
+ * export default class MyTodoPage {
+ *    render() {
+ *      return html`
+ *        <add-todo></add-todo>
+ *      `
+ *    }
+ * }
  */
 @customElement('add-todo')
 @style(styles)

@@ -23,12 +23,6 @@
       "compiler": "bit.envs/compilers/typescript@3.0.0"
     },
     "componentsDefaultDirectory": "components/{name}",
-    "packageManager": "npm",
-    "resolveModules": {
-      "modulesDirectories": ["src"],
-      "aliases": {
-          "@": "someDir"
-      }
-    }
+    "packageManager": "npm"
   }
 }
