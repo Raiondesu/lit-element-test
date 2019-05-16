@@ -1,5 +1,5 @@
-import { property, customElement } from '../../../../../node_modules/lit-element/lit-element.js';
-import { DabElement, render, style } from '../../../../dab-element.js';
+import { property, customElement } from '../../../node_modules/lit-element/lit-element.js';
+import { DabElement, render, style } from '../../dab-element.js';
 
 import view from './view.js';
 import css from './styles.js';

@@ -1,7 +1,7 @@
 import { html } from '../../../node_modules/lit-html/lit-html.js';
 import { event } from '../../dab-element.js';
 
-import './components/todo-list/index.js';
+import '../../components/todo-list/index.js';
 
 export default function(this: import('./index').default) {
   return html`
