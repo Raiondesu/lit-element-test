@@ -1,5 +1,5 @@
 //@ts-ignore
-import 'https://unpkg.com/autobind@1.0.3/autobind.js';
+import '../node_modules/autobind/autobind.js';
 declare function autobind<T>(target: T): T;
 
 import { LitElement, TemplateResult, CSSResult, html } from '../node_modules/lit-element/lit-element.js';
@@ -38,8 +38,6 @@ export const render = (view: () => TemplateResult) => (target) => {
 }
 
 export const style = (style: CSSResult | (() => CSSResult)) => (target) => {
-
-
   const defineStaticStyle = (getStyle: () => CSSResult) => Object.defineProperty(target, 'styles', {
     get: getStyle
   });
