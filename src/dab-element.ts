@@ -59,11 +59,6 @@ export const style = (style: CSSResult | (() => CSSResult)) => (target) => {
       `;
     }
   }
-
-  console.log(String(target.prototype.createRenderRoot), String(function (this: any) { return this; }));
-  console.log(String(target.prototype.createRenderRoot) !== String(function (this: any) { return this; }));
-
-
   const isShadow = String(target.prototype.createRenderRoot) !== String(function (this: any) { return this; });
 
   const styleFunction = typeof style === 'function' ? style : () => style;

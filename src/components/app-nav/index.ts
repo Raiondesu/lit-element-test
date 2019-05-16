@@ -18,11 +18,6 @@ import { DabElement, style } from '../../dab-element.js';
     margin: 0;
     padding: 0 1rem;
   }
-
-  a[href] {
-    color: white;
-    text-decoration: none;
-  }
 `)
 export class AppNav extends DabElement {
   render = () => html`

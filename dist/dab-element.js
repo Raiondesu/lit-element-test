@@ -42,8 +42,6 @@ export const style = (style) => (target) => {
       `;
         };
     };
-    console.log(String(target.prototype.createRenderRoot), String(function () { return this; }));
-    console.log(String(target.prototype.createRenderRoot) !== String(function () { return this; }));
     const isShadow = String(target.prototype.createRenderRoot) !== String(function () { return this; });
     const styleFunction = typeof style === 'function' ? style : () => style;
     if (isShadow) {
