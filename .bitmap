@@ -62,8 +62,13 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "raiondesu.lit-element-test-todo/add-todo@1.0.1": {
+    "raiondesu.lit-element-test-todo/add-todo@1.0.7": {
         "files": [
+            {
+                "relativePath": "src/components/add-todo/README.md",
+                "test": false,
+                "name": "README.md"
+            },
             {
                 "relativePath": "src/components/add-todo/index.ts",
                 "test": false,
@@ -85,7 +90,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "raiondesu.lit-element-test-todo/todo-list@1.0.1": {
+    "raiondesu.lit-element-test-todo/todo-list@1.0.7": {
         "files": [
             {
                 "relativePath": "src/components/todo-list/index.ts",

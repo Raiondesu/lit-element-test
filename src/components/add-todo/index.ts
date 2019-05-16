@@ -11,7 +11,6 @@ import styles from './styles.js';
  *
  * import { customElement, html } from 'lit-element';
  *
- *
  * export default customElement('todo-page')(class MyTodoPage {
  *    render() {
  *      return html`
